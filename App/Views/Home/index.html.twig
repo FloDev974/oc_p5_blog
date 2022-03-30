@@ -1,0 +1,40 @@
+{% extends "base.html.twig" %}
+{% set img = 'https://images.unsplash.com/photo-1506452819137-0422416856b8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1073&q=80' %}
+{% set title = 'Florent ROUGET' %}
+{% set subtitle = 'Développeur web et mobile' %}
+{% block title %}Home
+{% endblock %}
+
+{% block body %}
+	<div class="container justify-content-center" style="height: 150px;background-color: #f7f3f0; border-radius:25px;margin-top:250px"></div>
+
+	<div class="container justify-content-center">
+		<div class="row">
+			<div class="col-lg-9 py-5">
+				<div class="col-lg-12">
+					<h2>Recent Articles</h2>
+					<div class="col-lg-1" style="background-color: #b7997f; height:0.2em"></div>
+				</div>
+
+				<div class="col-lg-11 d-flex flex-column justify-content-center">
+					{% for post in posts %}
+						{% include 'Home/CardPost/cardPost.html.twig' with post %}
+					{% endfor %}
+				</div>
+			</div>
+			<div class="col-lg-3 py-5">
+				<div class="col-lg-12" style="margin-left: 4em;">
+					<h2>About Me</h2>
+					<div class="col-lg-2" style="background-color: #b7997f; height:0.2em"></div>
+				</div>
+				<div class="col-lg-12 d-flex flex-column justify-content-center py-5">
+					<div class="col-lg-12 mb-5 shadow-lg" style="background-color:white;height:400px;border-radius:25px;">
+						<div class="col-lg-12" style="background: url(https://images.unsplash.com/photo-1604145559206-e3bce0040e2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80);height:60%;background-size: cover;border-radius: 25px 25px 0 0;  background-position: center;"></div>
+
+					</div>
+					<div class="col-lg-12 mb-5 shadow-lg" style="background: url(https://images.unsplash.com/photo-1604145559206-e3bce0040e2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80);background-size: cover;background-position: center;height:400px;border-radius:25px;"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

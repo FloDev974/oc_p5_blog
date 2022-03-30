@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+{% set img = post.img_url %}
+{% set title = post.title %}
+{% set subtitle = post.chapô %}
+{% block title %}Blog
+{% endblock %}
+
+{% block body %}
+
+
+	<div class="container justify-content-center" style="margin-top:250px;">
+		<p>{{ post.content }}</p>
+	</div>
+
+{% endblock %}
